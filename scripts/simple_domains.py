@@ -1,14 +1,19 @@
 # Escáner de Subdomínios Simples
 
+import os
 import requests
 import concurrent.futures
 import argparse
 from colorama import Fore, Style
+from InquirerPy import inquirer
 
 # Lista base de subdomínios comunes (se puede ampliar según sea necesario)
 SUBDOMAINS = [
     'www', 'mail', 'ftp', 'webmail', 'localhost', 'cpanel', 'api', 'test', 'dev'
 ]
+
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 # Función para verificar si un subdominio es válido
 def check_subdomain(domain, subdomain):
@@ -35,17 +40,26 @@ def scan(domain, threads=10):
                 found.append(result)
     return found
 
-def main():
-    parser = argparse.ArgumentParser(description='Subdomain Scanner')
-    parser.add_argument('domain', help='Target domain')
-    parser.add_argument('--threads', type=int, default=10, help='Number of threads (default=10)')
-    args = parser.parse_args()
+# Menú para escaneo simple
+def simple_scan_menu():
+    while True:
+        clear()
+        print(Fore.LIGHTMAGENTA_EX + "Domains list: ", end="")
+        for subdomain in SUBDOMAINS:
+            print(Fore.LIGHTMAGENTA_EX + f"{subdomain}", end=", ")
 
-    print(f"{Fore.CYAN}[*] Scanning domain: {args.domain}{Style.RESET_ALL}")
-    results = scan(args.domain, args.threads)
+        print("\n")
+        target = input(Fore.RED + "Target: ")
 
-    print(f"\n{Fore.LIGHTBLUE_EX}[!] Found {len(results)} valid subdomains:{Style.RESET_ALL}")
-    for r in results:
-        print(f" - {r}")
+        print(f"{Fore.CYAN}[*] Scanning domain: {target}{Style.RESET_ALL}")
+        results = scan(target, 10)
 
-main()
+        print(f"\n{Fore.LIGHTBLUE_EX}[!] Found {len(results)} valid subdomains:{Style.RESET_ALL}")
+        for r in results:
+            print(f" - {r}")
+
+        # Preguntar si quiere repetir
+        choice = input(Fore.YELLOW + "\n¿New Scan? (y/n): ").lower()
+        if choice != 'y':
+            clear()
+            break
