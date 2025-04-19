@@ -28,3 +28,12 @@ FLAKK/
 ├── requirements.txt             # Dependencias necesarias
 └── __init__.py                  # (opcional, para tratar como paquete)
 ```
+---
+
+## 🛠️ Requisitos
+
+- Python 3.8+
+- Módulos de Python:
+
+```bash
+pip install -r requirements.txt
