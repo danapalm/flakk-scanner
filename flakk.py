@@ -17,7 +17,7 @@ def intro():
   f = pyfiglet.Figlet(font="larry3d")
   print(Fore.CYAN + Style.BRIGHT + f.renderText("FLAKK"))
   print(Fore.LIGHTBLACK_EX + Style.BRIGHT + "FLAKK - Custom web scanner version 0.3.1.")
-  print(Fore.LIGHTBLACK_EX + "Developed by Juan Pablo (danapalm)")
+  print(Fore.LIGHTBLACK_EX + "Developed by napalm (danapalm)")
   print(Fore.LIGHTBLACK_EX + "Github: https://github.com/danapalm")
 
 def dynamic_menu():
