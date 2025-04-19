@@ -18,6 +18,7 @@ Incluye una interfaz de consola amigable con navegación por teclado (flechas) g
 
 ## 📁 Estructura del Proyecto
 
+```bash
 FLAKK/
 ├── scripts/
 │   └── simple_domains.py        # Módulo que contiene el escáner de subdominios
@@ -26,3 +27,4 @@ FLAKK/
 ├── README.md                    # Documentación del proyecto
 ├── requirements.txt             # Dependencias necesarias
 └── __init__.py                  # (opcional, para tratar como paquete)
+```
