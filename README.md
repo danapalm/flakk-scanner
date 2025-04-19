@@ -37,3 +37,50 @@ FLAKK/
 
 ```bash
 pip install -r requirements.txt
+```
+
+---
+## 🚀 Uso
+
+```bash
+python flakk.py
+```
+
+---
+## 🧠 Preview
+
+```bash
+[*] Scanning domain: ejemplo.com
+
+[+] http://www.ejemplo.com -> 200
+[+] http://mail.ejemplo.com -> 403
+
+[!] Found 2 valid subdomains:
+ - http://www.ejemplo.com
+ - http://mail.ejemplo.com
+```
+
+---
+## 📌 Personalización
+
+Puedes editar la lista de subdominios en:
+
+```bash
+scripts/simple_domains.py
+```
+
+Lista de dominions:
+```bash
+SUBDOMAINS = [
+    'www', 'mail', 'ftp', 'webmail', 'localhost', 'cpanel', 'api', 'test', 'dev'
+]
+```
+
+---
+## 🧑‍💻 Autor
+
+[Visita mi github😊](https://github.com/danapalm)
+
+
+
+
