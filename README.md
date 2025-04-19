@@ -33,14 +33,10 @@ FLAKK/
 ## 🛠️ Requisitos
 
 - Python 3.8+
-- Módulos de Python:
-
-```bash
-pip install -r requirements.txt
-```
+- Módulos de Python (requirements.txt)
 
 ---
-## 🚀 Instalación y uso
+## 🚀 Instalación, dependencias y uso
 
 Para clonar este proyecto, usa el siguiente comando:
 
@@ -48,12 +44,17 @@ Para clonar este proyecto, usa el siguiente comando:
 git clone https://github.com/danapalm/flakk-scanner.git
 ```
 
+Para instalar las dependencias:
+
+```bash
+pip install -r requirements.txt
+```
+
 Para utilizar la herramienta:
 
 ```bash
 python flakk.py
 ```
-
 
 
 ---
