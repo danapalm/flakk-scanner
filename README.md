@@ -26,7 +26,7 @@ FLAKK/
 ├── flakk.py                     # Archivo principal que ejecuta el menú interactivo
 ├── README.md                    # Documentación del proyecto
 ├── requirements.txt             # Dependencias necesarias
-└── __init__.py                  # (opcional, para tratar como paquete)
+└── __init__.py                  # (opcional, para tratar como paquete. Aunque todo se maneja desde flakk.py)
 ```
 ---
 
@@ -40,11 +40,21 @@ pip install -r requirements.txt
 ```
 
 ---
-## 🚀 Uso
+## 🚀 Instalación y uso
+
+Para clonar este proyecto, usa el siguiente comando:
+
+```bash
+git clone https://github.com/tu-usuario/tu-repositorio.git
+```
+
+Para utilizar la herramienta:
 
 ```bash
 python flakk.py
 ```
+
+
 
 ---
 ## 🧠 Preview
