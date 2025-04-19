@@ -45,7 +45,7 @@ pip install -r requirements.txt
 Para clonar este proyecto, usa el siguiente comando:
 
 ```bash
-git clone https://github.com/tu-usuario/tu-repositorio.git
+git clone https://github.com/danapalm/flakk-scanner.git
 ```
 
 Para utilizar la herramienta:
