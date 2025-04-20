@@ -1,56 +1,56 @@
-# 🕷️ FLAKK - Custom Web Scanner v0.3.1
+# 🕷️ FLAKK - Custom Web Scanner v0.3.6
 
-**FLAKK** es un escáner de subdominios simple, personalizable e interactivo, diseñado para ayudarte a encontrar subdominios activos en un dominio objetivo.  
-Incluye una interfaz de consola amigable con navegación por teclado (flechas) gracias a `InquirerPy` y colores con `colorama` para resaltar resultados importantes.
-
----
-
-## 📦 Características
-
-- Escaneo multihilo de subdominios comunes
-- Menú interactivo con flechas (`InquirerPy`)
-- Soporte de colores para mejorar la lectura (`colorama`)
-- Visuales en consola con arte ASCII (`pyfiglet`)
-- Limpieza automática de la terminal
-- Opción de repetir escaneos o salir fácilmente
+**FLAKK** is a simple, customizable, and interactive subdomain scanner designed to help you find active subdomains on a target domain.
+It features a user-friendly console interface with keyboard navigation (arrow keys) using `InquirerPy` and color highlighting with `colorama` to emphasize important results.
 
 ---
 
-## 📁 Estructura del Proyecto
+## 📦 Features
+
+- Multithreaded scanning of common subdomains
+- Interactive menu with arrow key navigation (`InquirerPy`)
+- Color support for better readability (`colorama`)
+- Console visuals with ASCII art (`pyfiglet`)
+- Automatic terminal cleanup
+- Option to repeat scans or exit easily
+
+---
+
+## 📁 Project Structure
 
 ```bash
 FLAKK/
 ├── scripts/
-│   └── simple_domains.py        # Módulo que contiene el escáner de subdominios
+│   └── simple_domains.py        # Module containing the subdomain scanner
 │
-├── flakk.py                     # Archivo principal que ejecuta el menú interactivo
-├── README.md                    # Documentación del proyecto
-├── requirements.txt             # Dependencias necesarias
-└── __init__.py                  # (opcional, para tratar como paquete. Aunque todo se maneja desde flakk.py)
+├── flakk.py                     # Main file that runs the interactive menu
+├── README.md                    # Project documentation
+├── requirements.txt             # Required dependencies
+└── __init__.py                  # (optional, for package recognition. Everything is managed from flakk.py)
 ```
 ---
 
-## 🛠️ Requisitos
+## 🛠️ Requirements
 
 - Python 3.8+
-- Módulos de Python (requirements.txt)
+- Python modules (requirements.txt)
 
 ---
-## 🚀 Instalación, dependencias y uso
+## 🚀 Installation, Dependencies, and Usage
 
-Para clonar este proyecto, usa el siguiente comando:
+To clone this project, use the following command:
 
 ```bash
 git clone https://github.com/danapalm/flakk-scanner.git
 ```
 
-Para instalar las dependencias:
+To install the dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Para utilizar la herramienta:
+To run the tool:
 
 ```bash
 python flakk.py
@@ -61,26 +61,26 @@ python flakk.py
 ## 🧠 Preview
 
 ```bash
-[*] Scanning domain: ejemplo.com
+[*] Scanning domain: example.com
 
-[+] http://www.ejemplo.com -> 200
-[+] http://mail.ejemplo.com -> 403
+[+] http://www.example.com -> 200
+[+] http://mail.example.com -> 403
 
 [!] Found 2 valid subdomains:
- - http://www.ejemplo.com
- - http://mail.ejemplo.com
+ - http://www.example.com
+ - http://mail.example.com
 ```
 
 ---
-## 📌 Personalización
+## 📌 Customization
 
-Puedes editar la lista de subdominios en:
+You can edit the list of subdomains in:
 
 ```bash
 scripts/simple_domains.py
 ```
 
-Lista de dominions:
+Subdomain list:
 ```bash
 SUBDOMAINS = [
     'www', 'mail', 'ftp', 'webmail', 'localhost', 'cpanel', 'api', 'test', 'dev'
@@ -88,10 +88,6 @@ SUBDOMAINS = [
 ```
 
 ---
-## 🧑‍💻 Autor
+## 🧑‍💻 Author
 
-[Visita mi github😊](https://github.com/danapalm)
-
-
-
-
+[Check out my github👻](https://github.com/danapalm)
