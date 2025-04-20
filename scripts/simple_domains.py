@@ -1,35 +1,44 @@
-# Escáner de Subdomínios Simples
+# Simple subdomain scanner
 
 import os
 import requests
 import concurrent.futures
-import argparse
 from colorama import Fore, Style
-from InquirerPy import inquirer
+import urllib.request
 
-# Lista base de subdomínios comunes (se puede ampliar según sea necesario)
+# List of domains (can be customized)
 SUBDOMAINS = [
     'www', 'mail', 'ftp', 'webmail', 'localhost', 'cpanel', 'api', 'test', 'dev'
 ]
 
+# Utilities
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-# Función para verificar si un subdominio es válido
-def check_subdomain(domain, subdomain):
-    url = f"http://{subdomain}.{domain}"
-    try:
-        response = requests.get(url, timeout=3)
-        if response.status_code < 400:
-            print(f"{Fore.GREEN}[+] {url} -> {response.status_code}{Style.RESET_ALL}")
-            return url
-    except requests.ConnectionError:
-        pass
-    except requests.Timeout:
-        pass
-    return None
+# Verify online status
+def is_online(host, timeout):
+  try:
+      urllib.request.urlopen(host, timeout=timeout)
+      return True
+  except:
+      print(Fore.YELLOW + "Warning⚠️ : You are not connected to internet!")
 
-# Función principal para escanear subdominios
+
+# Verify valid subdomains
+def check_subdomain(domain, subdomain):
+  url = f"http://{subdomain}.{domain}"
+  try:
+    response = requests.get(url, timeout=3)
+    if response.status_code < 400:
+      print(f"{Fore.GREEN}[+] {url} -> {response.status_code}{Style.RESET_ALL}")
+      return url
+  except requests.ConnectionError:
+    pass
+  except requests.Timeout:
+    pass
+  return None
+
+# Scan subdomains
 def scan(domain, threads=10):
     found = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=threads) as executor:
@@ -40,7 +49,7 @@ def scan(domain, threads=10):
                 found.append(result)
     return found
 
-# Menú para escaneo simple
+# Main menu for simple scanning
 def simple_scan_menu():
     while True:
         clear()
@@ -58,7 +67,10 @@ def simple_scan_menu():
         for r in results:
             print(f" - {r}")
 
-        # Preguntar si quiere repetir
+        # Verify online status
+        is_online('http://www.google.com',3)
+
+        # Again loop
         choice = input(Fore.YELLOW + "\n¿New Scan? (y/n): ").lower()
         if choice != 'y':
             clear()
