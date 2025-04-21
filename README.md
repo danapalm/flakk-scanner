@@ -13,7 +13,7 @@ It features a user-friendly console interface with keyboard navigation (arrow ke
 - Console visuals with ASCII art (`pyfiglet`)
 - Automatic terminal cleanup
 
-# 💫 Upgrades
+## 💫 Upgrades
 
 - Option to save scans into text files
 - Option to repeat scans or exit easily

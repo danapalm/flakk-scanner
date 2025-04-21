@@ -50,6 +50,7 @@ def scan(domain, threads=10):
                 found.append(result)
     return found
 
+# For list all subdomains
 def show_subdomains():
   print(Fore.LIGHTMAGENTA_EX + "Domains list: ", end="")
   for subdomain in SUBDOMAINS:
