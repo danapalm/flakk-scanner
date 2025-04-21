@@ -4,7 +4,7 @@
 
 import pyfiglet
 from InquirerPy import inquirer
-from colorama import Fore, Back, Style, init
+from colorama import Fore, Style, init
 
 from scripts import simple_domains
 

@@ -5,6 +5,7 @@ import requests
 import concurrent.futures
 from colorama import Fore, Style
 import urllib.request
+from datetime import datetime
 
 # List of domains (can be customized)
 SUBDOMAINS = [
@@ -70,8 +71,27 @@ def simple_scan_menu():
         # Verify online status
         is_online('http://www.google.com',3)
 
+        # Ask for save the scan
+        save = input(Fore.LIGHTBLUE_EX + "¿Want to save it? (y/n): ").lower()
+        if save == 'y':
+          filename = input(Fore.LIGHTBLUE_EX + "Filename: ")
+          save_scan(filename,results)
+
         # Again loop
         choice = input(Fore.YELLOW + "\n¿New Scan? (y/n): ").lower()
         if choice != 'y':
             clear()
             break
+
+# Save scan data into text file
+def save_scan(filename, results):
+   date = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+   with open("logs/" + filename+ "-" + date + ".txt", "w", encoding="utf-8") as file:
+      file.write(f"Scan date {date}\n\n")
+      if len(results) == 0:
+         file.write("Not domains found!")
+      else:
+        file.write(f"Results: {len(results)} domains found and active!\n\n")
+        for r in results:
+          file.write(str(r+"\n"))
+   print(Fore.GREEN + f"Scan saved at '/logs/{filename}-{date}.txt'")
