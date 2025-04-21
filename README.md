@@ -12,7 +12,12 @@ It features a user-friendly console interface with keyboard navigation (arrow ke
 - Color support for better readability (`colorama`)
 - Console visuals with ASCII art (`pyfiglet`)
 - Automatic terminal cleanup
+
+# 💫 Upgrades
+
+- Option to save scans into text files
 - Option to repeat scans or exit easily
+- Option to add new subdomains for better scans
 
 ---
 
@@ -22,6 +27,7 @@ It features a user-friendly console interface with keyboard navigation (arrow ke
 FLAKK/
 ├── scripts/
 │   └── simple_domains.py        # Module containing the subdomain scanner
+├── logs/                        # Folder to save scans (only in case to save scans)
 │
 ├── flakk.py                     # Main file that runs the interactive menu
 ├── README.md                    # Project documentation
