@@ -50,13 +50,27 @@ def scan(domain, threads=10):
                 found.append(result)
     return found
 
+def show_subdomains():
+  print(Fore.LIGHTMAGENTA_EX + "Domains list: ", end="")
+  for subdomain in SUBDOMAINS:
+    print(Fore.LIGHTMAGENTA_EX + f"{subdomain}", end=", ")
+
 # Main menu for simple scanning
 def simple_scan_menu():
     while True:
         clear()
-        print(Fore.LIGHTMAGENTA_EX + "Domains list: ", end="")
-        for subdomain in SUBDOMAINS:
-            print(Fore.LIGHTMAGENTA_EX + f"{subdomain}", end=", ")
+        show_subdomains()
+
+        while True:
+           # Ask for add new subdomains to list
+          sub = input(Fore.LIGHTBLUE_EX + "\n¿Want to add a new subdomain? (y/n): ").lower()
+          if sub == 'y':
+            subdo = input(Fore.LIGHTBLUE_EX + "New subdomain: ")
+            SUBDOMAINS.append(subdo)
+            clear()
+            show_subdomains()
+          else:
+             break
 
         print("\n")
         target = input(Fore.RED + "Target: ")
@@ -72,7 +86,7 @@ def simple_scan_menu():
         is_online('http://www.google.com',3)
 
         # Ask for save the scan
-        save = input(Fore.LIGHTBLUE_EX + "¿Want to save it? (y/n): ").lower()
+        save = input(Fore.LIGHTBLUE_EX + "\n¿Want to save it? (y/n): ").lower()
         if save == 'y':
           filename = input(Fore.LIGHTBLUE_EX + "Filename: ")
           save_scan(filename,results)

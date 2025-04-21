@@ -10,9 +10,6 @@ from scripts import simple_domains
 
 init(autoreset=True)
 
-# User choice
-action = ""
-
 # Info template by napalm (me <3)
 def intro():
   f = pyfiglet.Figlet(font="larry3d")
@@ -32,6 +29,7 @@ def dynamic_menu():
               "Exit"
           ],
           default="Scann domain",
+
       ).execute()
 
       if "Scann" in action:
