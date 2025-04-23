@@ -84,7 +84,9 @@ def simple_scan_menu():
             print(f" - {r}")
 
         # Verify online status
-        is_online('http://www.google.com',3)
+        if not is_online('http://www.google.com',3):
+           clear()
+           break
 
         # Ask for save the scan
         save = input(Fore.LIGHTBLUE_EX + "\n¿Want to save it? (y/n): ").lower()
